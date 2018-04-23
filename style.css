@@ -1,3 +1,9 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Segoe UI", "Arial";
+}
+
 header {
   background-color: #333333;
 }

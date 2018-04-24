@@ -2,34 +2,20 @@
 <html>
   <head>
     <title>Drago's Lair</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="description" content="Dragoteryx's website">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Dragoteryx">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="facts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="jquery.transit.min.js"></script>
-    <script>
-      function showFact() {
-        $("#quote").text(facts[Math.floor(Math.random()*facts.length)]);
-      }
-      $(document).ready(() => {
-        showFact();
-        $(window).scroll(() => {
-          if ($(window).scrollTop() != 0)
-            $("#leftmenu").css("border-top", "5px solid var(--vibrant)");
-          else
-            $("#leftmenu").css("border-top", "5px solid #333");
-        });
-        $(".button, .cadre").mouseenter(function() {
-          $(this).addClass("animated pulse");
-        });
-        $(".button, .cadre").mouseleave(function() {
-          $(this).removeClass("animated pulse");
-        });
-      });
-    </script>
+    <script src="main.js"></script>
   </head>
-  <body>
+  <body id="up">
     <header>
       <div id="menu">
         Drago's Lair
@@ -42,15 +28,14 @@
           <tr><a href="https://github.com/Dragoteryx" class="button leftbutton round">Github</a></tr>
         </table>
       </div>
+      <a href="#up" id="upbutton" class="button round">Up</a></tr>
       <div id="content">
-        <p>
-          <h1>WTF is this place?</h1>
-          I don't know, a place where I experiment stuff, I guess... You could call it my website.
-        </p>
+        <h1>WTF is this place?</h1>
+        <span>I don't know, a place where I experiment stuff, I guess... You could call it my website.</span>
         <div class="separator"></div>
         <p>
           <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">What an interesting link</a>, oh by the way, do you want something cool?
-          <span id="quote" class="box">
+          <span id="fact" class="box">
             If you can see this then you should probably use a better web browser.
           </span>
           <a href="javascript:showFact()" class="button round">Show a random fact</a>
@@ -61,51 +46,49 @@
           <a href="https://discordbots.org/bot/273576577512767488"><img src="https://discordbots.org/api/widget/273576577512767488.svg"></img></a>
         </p>
         <div class="separator"></div>
-        <p>
-          Did you know that I like Symphogear?
-          <table class="line">
-            <tr>
-              <td>
-                <div class="cadre">
-                  <img src="src/hibiki.jpg"></img>
-                  <p>Balwisyall nescell Gungnir tron</p>
-                </div>
-              </td>
-              <td>
-                <div class="cadre">
-                  <img src="src/tsubasa.jpg"></img>
-                  <p>Imyuteus Ame no Habakiri tron</p>
-                </div>
-              </td>
-              <td>
-                <div class="cadre">
-                  <img src="src/chris.jpg"></img>
-                  <p>Killter Ichaival tron</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="cadre">
-                  <img src="src/maria.jpg"></img>
-                  <p>Seilien coffin Airgetlám tron</p>
-                </div>
-              </td>
-              <td>
-                <div class="cadre">
-                  <img src="src/kirika.jpg"></img>
-                  <p>Zeios Igalima raizen tron</p>
-                </div>
-              </td>
-              <td>
-                <div class="cadre">
-                  <img src="src/shirabe.jpg"></img>
-                  <p>Various Shul Shagana tron</p>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </p>
+        <span>Did you know that I like Symphogear?</span>
+        <table class="line">
+          <tr>
+            <td>
+              <div class="cadre">
+                <img src="src/hibiki.jpg"></img>
+                <p>Balwisyall nescell Gungnir tron</p>
+              </div>
+            </td>
+            <td>
+              <div class="cadre">
+                <img src="src/tsubasa.jpg"></img>
+                <p>Imyuteus Ame no Habakiri tron</p>
+              </div>
+            </td>
+            <td>
+              <div class="cadre">
+                <img src="src/chris.jpg"></img>
+                <p>Killter Ichaival tron</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="cadre">
+                <img src="src/maria.jpg"></img>
+                <p>Seilien coffin Airgetlám tron</p>
+              </div>
+            </td>
+            <td>
+              <div class="cadre">
+                <img src="src/kirika.jpg"></img>
+                <p>Zeios Igalima raizen tron</p>
+              </div>
+            </td>
+            <td>
+              <div class="cadre">
+                <img src="src/shirabe.jpg"></img>
+                <p>Various Shul Shagana tron</p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
     <footer>

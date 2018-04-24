@@ -39,6 +39,15 @@
   overflow: hidden;
 }
 
+#upbutton {
+  float: right;
+  position: fixed;
+  width: 8%;
+  right: 0.5%;
+  bottom: 0;
+  z-index: 10;
+}
+
 #content {
   padding: 2.5%;
   padding-left: 5%;

@@ -28,7 +28,7 @@ footer {
   height: 90vh;
 }
 
-#left {
+#leftmenu {
   background: linear-gradient(#333, #222);
   width: 10%;
   min-height: 10em;
@@ -56,22 +56,33 @@ footer {
   text-align: center;
   text-decoration: none !important;
   display: inline-block;
-}
-
-a:link, a:visited {
-  color: #808000;
-  text-decoration: none;
-}
-
-a:hover, a:active {
-  text-decoration: underline;
+  font-weight: normal !important;
 }
 
 .button:hover {
   border-bottom: 5px solid #008080;
 }
 
-.button.left {
+.button.leftbutton {
   width: 7.5em;
   margin: 5px;
+}
+
+a:link, a:visited {
+  color: #808000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid #DDD;
+  padding: 5px;
+  padding-bottom: 25px;
+  margin: 5px;
+  width: 98%;
 }

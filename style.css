@@ -2,12 +2,43 @@
   padding: 0px;
   margin: 0px;
   font-family: "Segoe UI", "Arial";
+  color: #333;
 }
 
 header {
-  background-color: #333333;
+  background: linear-gradient(#222, #333);
+  color: #EEE;
+  padding: 5px;
+  height: 5vh;
+  position: relative;
 }
 
 footer {
-  background-color: #333333;
+  background: linear-gradient(#333, #222);
+  color: #EEE;
+  padding: 5px;
+  height: 5vh;
+  position: relative;
+}
+
+#page {
+  background: radial-gradient(#EEE, #DDD);
+  height: 90vh;
+}
+
+#left {
+  background: linear-gradient(#333, #222);
+  width: 10%;
+  height: 10em;
+  position: fixed;
+}
+
+#content {
+  height: 100%;
+  background: radial-gradient(#FFF, #EEE);
+  margin-left: 10%;
+  margin-right: 10%;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  box-shadow: 10px 0px 10px #DDD, -10px 0px 10px #DDD;
 }

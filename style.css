@@ -3,6 +3,7 @@
   margin: 0px;
   font-family: "Segoe UI", "Arial";
   color: #333;
+  --vibrant: #808000;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
   padding: 5px;
   height: 5vh;
   position: relative;
-  border-top: 5px solid #808000;
+  border-top: 5px solid var(--vibrant);
 }
 
 footer {
@@ -20,7 +21,7 @@ footer {
   padding: 5px;
   height: 5vh;
   position: relative;
-  border-bottom: 5px solid #808000;
+  border-bottom: 5px solid var(--vibrant);
 }
 
 #page {
@@ -33,7 +34,7 @@ footer {
   width: 10%;
   min-height: 10em;
   position: fixed;
-  border-bottom: 5px solid #808000;
+  border-bottom: 5px solid var(--vibrant);
   text-align: center;
 }
 
@@ -52,7 +53,7 @@ footer {
   color: #EEE !important;
   padding: 5px;
   background: radial-gradient(#333, #222);
-  border-bottom: 5px solid #808000;
+  border-bottom: 5px solid var(--vibrant);
   text-align: center;
   text-decoration: none !important;
   display: inline-block;
@@ -69,13 +70,17 @@ footer {
 }
 
 a:link, a:visited {
-  color: #808000;
+  color: var(--vibrant);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover, a:active {
   text-decoration: underline;
+}
+
+a.disabled {
+  pointer-events: none;
 }
 
 .box {
@@ -85,4 +90,8 @@ a:hover, a:active {
   padding-bottom: 25px;
   margin: 5px;
   width: 98%;
+}
+
+.round {
+  border-radius: 5px;
 }

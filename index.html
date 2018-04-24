@@ -7,9 +7,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="facts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery.transit.min.js"></script>
     <script>
-      $(document).ready(() => {
+      function showFact() {
         $("#quote").text(facts[Math.floor(Math.random()*facts.length)]);
+      }
+      $(document).ready(() => {
+        showFact();
       });
     </script>
   </head>
@@ -27,10 +31,11 @@
       <div id="content">
         <p class="animated bounce infinite">Hey m8 o/</p><br>
         <p>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A link</a>, and now something cool:
+          <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A link</a>, and now something cool:
           <span id="quote" class="box">
             If you can see this then you should probably use a better web browser.
           </span>
+          <a href="javascript:showFact()" class="button round">Show a random fact</a>
         </p>
       </div>
     </div>

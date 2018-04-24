@@ -11,6 +11,7 @@ header {
   padding: 5px;
   height: 5vh;
   position: relative;
+  border-top: 5px solid #808000;
 }
 
 footer {
@@ -19,6 +20,7 @@ footer {
   padding: 5px;
   height: 5vh;
   position: relative;
+  border-bottom: 5px solid #808000;
 }
 
 #page {
@@ -29,11 +31,14 @@ footer {
 #left {
   background: linear-gradient(#333, #222);
   width: 10%;
-  height: 10em;
+  min-height: 10em;
   position: fixed;
+  border-bottom: 5px solid #808000;
+  text-align: center;
 }
 
 #content {
+  padding: 5px;
   height: 100%;
   background: radial-gradient(#FFF, #EEE);
   margin-left: 10%;
@@ -41,4 +46,32 @@ footer {
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
   box-shadow: 10px 0px 10px #DDD, -10px 0px 10px #DDD;
+}
+
+.button {
+  color: #EEE !important;
+  padding: 5px;
+  background: radial-gradient(#333, #222);
+  border-bottom: 5px solid #808000;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+a:link, a:visited {
+  color: #808000;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+.button:hover {
+  border-bottom: 5px solid #008080;
+}
+
+.button.left {
+  width: 7.5em;
+  margin: 5px;
 }

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dragoteryx</title>
+    <title>Drago's Lair</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="facts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-
+      $(document).ready(() => {
+        $("#quote").text(facts[Math.floor(Math.random()*facts.length)]);
+      });
     </script>
   </head>
   <body>
     <header>
-      Salut!
+      Drago's Lair
     </header>
     <div id="page">
       <div id="leftmenu">
@@ -23,15 +26,15 @@
       <div id="content">
         <p class="animated bounce infinite">Hey m8 o/</p><br>
         <p>
-          <a href="">A link</a>, and now something cool:
-          <span class="box">
-            This is cool.
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A link</a>, and now something cool:
+          <span id="quote" class="box">
+            If you can see this then you should probably use a better web browser.
           </span>
         </p>
       </div>
     </div>
     <footer>
-      Aurevoir.
+      [INSERT FOOTER STUFF HERE]
     </footer>
   </body>
 </html>

@@ -14,33 +14,104 @@
       }
       $(document).ready(() => {
         showFact();
+        $(window).scroll(() => {
+          if ($(window).scrollTop() != 0)
+            $("#leftmenu").css("border-top", "5px solid var(--vibrant)");
+          else
+            $("#leftmenu").css("border-top", "5px solid #333");
+        });
+        $(".button, .cadre").mouseenter(function() {
+          $(this).addClass("animated pulse");
+        });
+        $(".button, .cadre").mouseleave(function() {
+          $(this).removeClass("animated pulse");
+        });
       });
     </script>
   </head>
   <body>
     <header>
-      Drago's Lair
+      <div id="menu">
+        Drago's Lair
+      </div>
     </header>
     <div id="page">
       <div id="leftmenu">
-        <ul>
-          <li><a href="https://twitter.com/Dragoteryx" class="button leftbutton">Twitter</a></li>
-          <li><a href="https://github.com/Dragoteryx" class="button leftbutton">Github</a></li>
-        </ul>
+        <table>
+          <tr><a href="https://twitter.com/Dragoteryx" class="button leftbutton round">Twitter</a></tr>
+          <tr><a href="https://github.com/Dragoteryx" class="button leftbutton round">Github</a></tr>
+        </table>
       </div>
       <div id="content">
-        <p class="animated bounce infinite">Hey m8 o/</p><br>
         <p>
-          <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A link</a>, and now something cool:
+          <h1>WTF is this place?</h1>
+          I don't know, a place where I experiment stuff, I guess... You could call it my website.
+        </p>
+        <div class="separator"></div>
+        <p>
+          <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">What an interesting link</a>, oh by the way, do you want something cool?
           <span id="quote" class="box">
             If you can see this then you should probably use a better web browser.
           </span>
           <a href="javascript:showFact()" class="button round">Show a random fact</a>
         </p>
+        <div class="separator"></div>
+        <p>
+          Also! I made a Discord bot! Wanna see it?<br>
+          <a href="https://discordbots.org/bot/273576577512767488"><img src="https://discordbots.org/api/widget/273576577512767488.svg"></img></a>
+        </p>
+        <div class="separator"></div>
+        <p>
+          Did you know that I like Symphogear?
+          <table class="line">
+            <tr>
+              <td>
+                <div class="cadre">
+                  <img src="src/hibiki.jpg"></img>
+                  <p>Balwisyall nescell Gungnir tron</p>
+                </div>
+              </td>
+              <td>
+                <div class="cadre">
+                  <img src="src/tsubasa.jpg"></img>
+                  <p>Imyuteus Ame no Habakiri tron</p>
+                </div>
+              </td>
+              <td>
+                <div class="cadre">
+                  <img src="src/chris.jpg"></img>
+                  <p>Killter Ichaival tron</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="cadre">
+                  <img src="src/maria.jpg"></img>
+                  <p>Seilien coffin Airgetlám tron</p>
+                </div>
+              </td>
+              <td>
+                <div class="cadre">
+                  <img src="src/kirika.jpg"></img>
+                  <p>Zeios Igalima raizen tron</p>
+                </div>
+              </td>
+              <td>
+                <div class="cadre">
+                  <img src="src/shirabe.jpg"></img>
+                  <p>Various Shul Shagana tron</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </p>
       </div>
     </div>
     <footer>
-      [INSERT FOOTER STUFF HERE]
+      <div id="post">
+        [INSERT FOOTER STUFF HERE]
+      </div>
     </footer>
   </body>
 </html>

@@ -6,42 +6,43 @@
   --vibrant: #808000;
 }
 
-header {
+#menu {
   background: linear-gradient(#222, #333);
-  color: #EEE;
   padding: 5px;
-  height: 5vh;
+  height: 35px;
   position: relative;
   border-top: 5px solid var(--vibrant);
+  color: #EEE;
 }
 
-footer {
+#post {
   background: linear-gradient(#333, #222);
   color: #EEE;
   padding: 5px;
-  height: 5vh;
+  height: 35px;
   position: relative;
   border-bottom: 5px solid var(--vibrant);
 }
 
 #page {
   background: radial-gradient(#EEE, #DDD);
-  height: 90vh;
+  min-height: 90vh;
 }
 
 #leftmenu {
   background: linear-gradient(#333, #222);
   width: 10%;
-  min-height: 10em;
   position: fixed;
   border-bottom: 5px solid var(--vibrant);
   text-align: center;
+  border-top: 5px solid #333;
+  overflow: hidden;
 }
 
 #content {
-  padding: 5px;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
   height: 100%;
   background: radial-gradient(#FFF, #EEE);
   margin-left: 10%;
@@ -96,4 +97,30 @@ a.disabled {
 
 .round {
   border-radius: 5px;
+}
+
+.cadre {
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid #CCC;
+  box-shadow: 2px 5px 10px #DDD;
+  background: radial-gradient(#FFF, #EEE);
+  position: relative;
+  z-index: 1;
+}
+
+.cadre img {
+  width: 100%;
+}
+
+.cadre p {
+  text-align: center;
+  padding: 5px;
+}
+
+.separator {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  height: 1px;
+  background-color: #CCC;
 }

@@ -40,6 +40,8 @@ footer {
 
 #content {
   padding: 5px;
+  padding-left: 3vw;
+  padding-right: 3vw;
   height: 100%;
   background: radial-gradient(#FFF, #EEE);
   margin-left: 10%;

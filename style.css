@@ -166,7 +166,7 @@ a.disabled {
     border-top: 5px solid var(--green);
 }
 
-::-webkit-scrollbar-thumb:active {
+::-webkit-scrollbar-thumb:hover {
   border-bottom: 5px solid var(--blue);
   border-top: 5px solid var(--blue);
 }

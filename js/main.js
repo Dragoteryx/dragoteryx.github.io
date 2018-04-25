@@ -6,11 +6,13 @@ $(document).ready(() => {
   if ($(window).scrollTop() == 0)
     $("#upbutton").addClass("disabled");
   $(window).scroll(() => {
-    if ($(window).scrollTop() == 0)
+    let scrollTop = $(window).scrollTop();
+    let scrollBottom = scrollTop + $(window).height();
+    if (scrollTop == 0)
       $("#upbutton").addClass("disabled");
     else
       $("#upbutton").removeClass("disabled");
-    if ($(window).scrollTop() > ($("#menu").offset().top + 50)) {
+    if (scrollTop > ($("#menu").offset().top + 50)) {
       $("#leftmenu").css("position", "fixed");
       $("#leftmenu").css("top", "0");
     } else {

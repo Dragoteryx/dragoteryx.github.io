@@ -174,3 +174,7 @@ a.disabled {
 ::-webkit-scrollbar-corner {
   background: #EEE;
 }
+
+.hidden {
+  visibility: hidden;
+}

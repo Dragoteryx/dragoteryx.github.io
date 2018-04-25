@@ -36,7 +36,7 @@ img {
 
 #page {
   background: radial-gradient(#EEE, #DDD);
-  min-height: 90vh;
+  min-height: 42vh;
 }
 
 #leftmenu {
@@ -62,6 +62,7 @@ img {
   padding: 2.5%;
   padding-left: 5%;
   padding-right: 5%;
+  min-height: 42vh;
   height: 100%;
   background: radial-gradient(#FFF, #EEE);
   margin-left: 10%;
@@ -177,4 +178,11 @@ a.disabled {
 
 .hidden {
   visibility: hidden;
+}
+
+#banana {
+  margin-top: 15px;
+  margin-left: 30%;
+  width: 100%;
+  max-width: 350px;
 }

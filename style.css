@@ -6,6 +6,20 @@
   --vibrant: #808000;
 }
 
+header {
+  overflow: hidden;
+}
+
+#banner {
+  width: 100%;
+  height: auto;
+}
+
+#banner img {
+  vertical-align: bottom;
+  width: 100%;
+}
+
 #menu {
   background: linear-gradient(#222, #333);
   padding: 5px;
@@ -35,15 +49,16 @@
   position: fixed;
   border-bottom: 5px solid var(--vibrant);
   text-align: center;
-  border-top: 5px solid #333;
   overflow: hidden;
+  padding-top: 5px;
 }
 
 #upbutton {
-  float: right;
+  background: linear-gradient(#333, #222);
+  height: 35px;
+  width: calc(10% - 10px);
   position: fixed;
-  width: 8%;
-  right: 0.5%;
+  right: 0;
   bottom: 0;
   z-index: 10;
 }
@@ -76,7 +91,7 @@
   border-bottom: 5px solid #008080;
 }
 
-.button.leftbutton {
+.button.important {
   width: 75%;
   margin: 5px;
 }

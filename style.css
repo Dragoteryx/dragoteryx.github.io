@@ -3,7 +3,9 @@
   margin: 0px;
   font-family: "Segoe UI", "Arial";
   color: #333;
-  --vibrant: #808000;
+  --green: #808000;
+  --blue: #008080;
+  --red: #800000;
 }
 
 img {
@@ -19,7 +21,7 @@ img {
   padding: 5px;
   height: 35px;
   position: relative;
-  border-top: 5px solid var(--vibrant);
+  border-top: 5px solid var(--green);
   color: #EEE;
 }
 
@@ -29,7 +31,7 @@ img {
   padding: 5px;
   height: 35px;
   position: relative;
-  border-bottom: 5px solid var(--vibrant);
+  border-bottom: 5px solid var(--green);
 }
 
 #page {
@@ -41,7 +43,7 @@ img {
   background: linear-gradient(#333, #222);
   width: 10%;
   position: fixed;
-  border-bottom: 5px solid var(--vibrant);
+  border-bottom: 5px solid var(--green);
   text-align: center;
   overflow: hidden;
   padding-top: 5px;
@@ -74,7 +76,7 @@ img {
   color: #EEE !important;
   padding: 5px;
   background: radial-gradient(#333, #222);
-  border-bottom: 5px solid var(--vibrant);
+  border-bottom: 5px solid var(--green);
   text-align: center;
   text-decoration: none !important;
   display: inline-block;
@@ -82,7 +84,7 @@ img {
 }
 
 .button:hover {
-  border-bottom: 5px solid #008080;
+  border-bottom: 5px solid var(--blue);
 }
 
 .button.important {
@@ -91,7 +93,7 @@ img {
 }
 
 a:link, a:visited {
-  color: var(--vibrant);
+  color: var(--green);
   text-decoration: none;
   font-weight: bold;
 }
@@ -102,6 +104,10 @@ a:hover, a:active {
 
 a.disabled {
   pointer-events: none;
+}
+
+.button.disabled {
+  border-bottom: 5px solid var(--red);
 }
 
 .box {

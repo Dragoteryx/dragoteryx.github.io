@@ -3,7 +3,13 @@ function showFact() {
 }
 $(document).ready(() => {
   showFact();
+  if ($(window).scrollTop() == 0)
+    $("#upbutton").addClass("disabled");
   $(window).scroll(() => {
+    if ($(window).scrollTop() == 0)
+      $("#upbutton").addClass("disabled");
+    else
+      $("#upbutton").removeClass("disabled");
     if ($(window).scrollTop() > ($("#menu").offset().top + 50)) {
       $("#leftmenu").css("position", "fixed");
       $("#leftmenu").css("top", "0");

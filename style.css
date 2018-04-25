@@ -6,16 +6,7 @@
   --vibrant: #808000;
 }
 
-header {
-  overflow: hidden;
-}
-
 #banner {
-  width: 100%;
-  height: auto;
-}
-
-#banner img {
   vertical-align: bottom;
   width: 100%;
 }

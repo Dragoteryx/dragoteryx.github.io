@@ -26,4 +26,5 @@ $(document).ready(() => {
   $(".button, .cadre").mouseleave(function() {
     $(this).removeClass("animated pulse");
   });
+  $("#showfact").click(showFact);
 });

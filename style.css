@@ -81,6 +81,7 @@ img {
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
   box-shadow: 10px 0px 10px #DDD, -10px 0px 10px #DDD;
+  overflow: hidden;
 }
 
 .button {
@@ -186,4 +187,8 @@ a.disabled {
   margin-left: 30%;
   width: 100%;
   max-width: 350px;
+}
+
+#symphogear-table {
+  width: 100%;
 }

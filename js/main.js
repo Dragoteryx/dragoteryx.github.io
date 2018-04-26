@@ -1,11 +1,17 @@
 function showFact() {
   $("#fact").text(facts[Math.floor(Math.random()*facts.length)]);
 }
-$(document).ready(() => {
+function adjust() {
+  $("#content").css("margin-left", $("#leftmenu").css("width"));
+}
+$(document).ready(function() {
+  adjust();
   showFact();
+  $(window).resize(adjust);
+  $("#showfact").click(showFact);
   if ($(window).scrollTop() == 0)
     $("#upbutton").addClass("disabled");
-  $(window).scroll(() => {
+  $(window).scroll(function() {
     let scrollTop = $(window).scrollTop();
     let scrollBottom = scrollTop + $(window).height();
     if (scrollTop == 0)
@@ -26,5 +32,4 @@ $(document).ready(() => {
   $(".button, .cadre").mouseleave(function() {
     $(this).removeClass("animated pulse");
   });
-  $("#showfact").click(showFact);
 });

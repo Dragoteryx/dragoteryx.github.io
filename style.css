@@ -3,9 +3,9 @@
   margin: 0px;
   font-family: "Segoe UI", "Arial";
   color: #333;
-  --green: #808000;
-  --blue: #008080;
-  --red: #800000;
+  --vibrant: olive;
+  --on: teal;
+  --off: maroon;
 }
 
 img {
@@ -21,7 +21,7 @@ img {
   padding: 5px;
   height: 35px;
   position: relative;
-  border-top: 5px solid var(--green);
+  border-top: 5px solid var(--vibrant);
   color: #EEE;
 }
 
@@ -31,10 +31,10 @@ img {
   padding: 5px;
   height: 35px;
   position: relative;
-  border-bottom: 5px solid var(--green);
+  border-bottom: 5px solid var(--vibrant);
 }
 
-#page {
+#wrapper {
   background: radial-gradient(#EEE, #DDD);
   min-height: 42vh;
 }
@@ -42,10 +42,21 @@ img {
 #leftmenu {
   background: linear-gradient(#333, #222);
   width: 10%;
+  min-width: 80px;
   position: fixed;
-  border-bottom: 5px solid var(--green);
+  border-bottom: 5px solid var(--vibrant);
   text-align: center;
   padding-top: 5px;
+}
+
+#leftmenu .button {
+  min-width: 50px;
+  width: 75%;
+  margin: 5px;
+}
+
+#leftmenu ul {
+  margin-bottom: 5px;
 }
 
 #upbutton {
@@ -76,7 +87,7 @@ img {
   color: #EEE !important;
   padding: 5px;
   background: radial-gradient(#333, #222);
-  border-bottom: 5px solid var(--green);
+  border-bottom: 5px solid var(--vibrant);
   text-align: center;
   text-decoration: none !important;
   display: inline-block;
@@ -84,17 +95,11 @@ img {
 }
 
 .button:hover {
-  border-bottom: 5px solid var(--blue);
-}
-
-.button.important {
-  min-width: 50px;
-  width: 75%;
-  margin: 5px;
+  border-bottom: 5px solid var(--on);
 }
 
 a:link, a:visited {
-  color: var(--green);
+  color: var(--vibrant);
   text-decoration: none;
   font-weight: bold;
 }
@@ -108,7 +113,7 @@ a.disabled {
 }
 
 .button.disabled {
-  border-bottom: 5px solid var(--red);
+  border-bottom: 5px solid var(--off);
 }
 
 .box {
@@ -163,21 +168,17 @@ a.disabled {
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#222, #333, #222);
-    border-bottom: 5px solid var(--green);
-    border-top: 5px solid var(--green);
+    border-bottom: 5px solid var(--vibrant);
+    border-top: 5px solid var(--vibrant);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  border-bottom: 5px solid var(--blue);
-  border-top: 5px solid var(--blue);
+  border-bottom: 5px solid var(--on);
+  border-top: 5px solid var(--on);
 }
 
 ::-webkit-scrollbar-corner {
   background: #EEE;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 #banana {

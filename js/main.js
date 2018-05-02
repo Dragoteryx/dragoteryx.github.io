@@ -1,5 +1,9 @@
 function showFact() {
-  $("#fact").text(facts[Math.floor(Math.random()*facts.length)]);
+  $.getJSON("https://factgenerator.herokuapp.com/generate").done(res => {
+    $("#fact").text(res.fact);
+  }).fail(err => {
+    $("#fact").text("I'm out of ideas sorry.");
+  });
 }
 function adjust() {
   $("#content").css("margin-left", $("#leftmenu").css("width"));

@@ -152,11 +152,9 @@ a.disabled {
   padding: 5px;
 }
 
-.separator {
+hr {
   margin-top: 5vh;
   margin-bottom: 5vh;
-  height: 1px;
-  background: #CCC;
 }
 
 ::-webkit-scrollbar {

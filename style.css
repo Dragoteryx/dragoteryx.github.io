@@ -136,10 +136,10 @@ a.disabled {
 }
 
 .cadre {
-  margin: 5px;
   display: inline-block;
   border: 1px solid #CCC;
   box-shadow: 2px 5px 10px #DDD;
+  width: 100%;
 }
 
 .cadre img {
@@ -187,11 +187,19 @@ hr {
   max-width: 350px;
 }
 
-#symphogear-table {
-  width: 100%;
-  max-width: 100%;
-}
-
 table {
   width: 100%;
+}
+
+ul.panel {
+  list-style-type: none;
+  width: 100%;
+}
+
+ul.panel li{
+  width: 32%;
+  display: inline-block;
+  float: left;
+  margin: 5px;
+  position: relative;
 }

@@ -1,6 +1,6 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-family: "Segoe UI", "Arial";
   color: #333;
   --vibrant: olive;
@@ -13,7 +13,7 @@ img {
 }
 
 #banner {
-  width: 100%;
+  width: 100%
 }
 
 #menu {

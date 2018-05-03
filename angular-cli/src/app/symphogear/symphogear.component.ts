@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { DOMAnimator } from "../DOMAnimator";
 
 @Component({
   selector: 'app-symphogear',
   templateUrl: './symphogear.component.html',
   styleUrls: ['./symphogear.component.css']
 })
-export class SymphogearComponent implements OnInit {
+export class SymphogearComponent extends DOMAnimator implements OnInit {
   gears = [
     [
       {chant: "Balwisyall nescell Gungnir tron", thumb: "../assets/hibiki.jpg"},
@@ -18,7 +19,7 @@ export class SymphogearComponent implements OnInit {
       {chant: "Various Shul Shagana tron", thumb: "../assets/shirabe.jpg"},
     ],
   ]
-  constructor() { }
+  constructor() {super()}
 
   ngOnInit() {
   }

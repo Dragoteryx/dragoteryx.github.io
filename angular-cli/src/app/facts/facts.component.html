@@ -3,5 +3,5 @@
   <span id="fact" class="box">
     {{fact}}
   </span>
-  <a id="showfact" href="javascript:" class="button round" (click)="refreshFact()">Show a random fact</a>
+  <a id="showfact" href="javascript:" class="button round" (click)="refreshFact()" (mouseenter)="pulse($event)">Show a random fact</a>
 </p>

@@ -3,21 +3,16 @@
   <div id="menu">
     {{title}}
   </div>
-  <nav id="leftmenu">
-    <ul>
-      <li><a href="https://twitter.com/Dragoteryx" class="button round">Twitter</a></li>
-      <li><a href="https://github.com/Dragoteryx" class="button round">Github</a></li>
-    </ul>
-  </nav>
+  <app-navmenu></app-navmenu>
 </header>
-<div id="wrapper">
+<div id="wrapper" (window:resize)="adjust()" (window:scroll)="setScrolling()">
   <div id="content">
     <router-outlet></router-outlet>
   </div>
 </div>
 <footer>
-  <a href="#up" id="upbutton" class="button">Up</a>
+  <a href="#up" id="upbutton" class="button" (mouseenter)="pulse($event)">Up</a>
   <div id="post">
-    [INSERT FOOTER STUFF HERE]
+    © DrG Company
   </div>
 </footer>

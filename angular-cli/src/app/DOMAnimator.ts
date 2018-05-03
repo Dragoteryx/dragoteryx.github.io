@@ -14,4 +14,13 @@ export class DOMAnimator {
     }, 750);
   }
 
+  pulseToggle(event) {
+    if (event.target.pulsating === undefined) event.target.pulsating = false;
+    if (event.target.pulsating)
+      $(event.target).removeClass("animated pulse infinite");
+    else
+      $(event.target).addClass("animated pulse infinite");
+    event.target.pulsating = !event.target.pulsating;
+  }
+
 }

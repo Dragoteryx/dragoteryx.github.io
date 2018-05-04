@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
-import { DOMAnimator } from "./DOMAnimator";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent extends DOMAnimator implements OnInit {
+export class AppComponent implements OnInit {
   title = "Drago's Lair";
 
-  constructor() {super()}
+  constructor() { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -37,6 +36,10 @@ export class AppComponent extends DOMAnimator implements OnInit {
       $("#leftmenu").css("position", "absolute");
       $("#leftmenu").css("top", "");
     }
+  }
+
+  scrollTop() {
+    $(window).scrollTop(0);
   }
 
 }

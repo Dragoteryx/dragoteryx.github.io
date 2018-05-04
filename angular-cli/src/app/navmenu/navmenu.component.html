@@ -1,6 +1,6 @@
 <nav id="leftmenu">
   <ul>
-    <li *ngFor="let website of websites"><a href="{{website.href}}" class="button round" (mouseenter)="pulse($event)">{{website.name}}</a></li>
-    <li *ngFor="let local of locals"><a routerLink="{{local.href}}" class="button round" (mouseenter)="pulse($event)">{{local.name}}</a></li>
+    <li *ngFor="let website of websites"><a href="{{website.href}}" class="button round" appPulse>{{website.name}}</a></li>
+    <li *ngFor="let local of locals"><a routerLink="{{local.href}}" class="button round" appPulse>{{local.name}}</a></li>
   </ul>
 </nav>

@@ -9,6 +9,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { UnknownComponent } from './unknown/unknown.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
+import { PulseDirective } from './pulse.directive';
+import { TogglePulseDirective } from './toggle-pulse.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
     SymphogearComponent,
     HomeComponent,
     UnknownComponent,
-    NavmenuComponent
+    NavmenuComponent,
+    PulseDirective,
+    TogglePulseDirective
   ],
   imports: [
     BrowserModule,

@@ -183,8 +183,9 @@ hr {
 }
 
 #banana {
+  display: inline-block;
+  text-align: center;
   margin-top: 15px;
-  margin-left: 30%;
   width: 100%;
   max-width: 350px;
 }

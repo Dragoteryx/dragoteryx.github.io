@@ -152,6 +152,7 @@ a.disabled {
   text-align: center;
   padding: 5px;
   font-size: 100%;
+  word-wrap: break-word;
 }
 
 hr {

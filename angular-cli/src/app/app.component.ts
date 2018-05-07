@@ -38,8 +38,4 @@ export class AppComponent implements OnInit {
     }
   }
 
-  scrollTop() {
-    $(window).scrollTop(0);
-  }
-
 }

@@ -1,11 +1,7 @@
 <span>Did you know that I like Symphogear?</span>
-<table class="display">
-  <tr *ngFor="let gearlign of gears">
-    <td *ngFor="let gear of gearlign">
-      <div class="cadre" appPulse>
-        <img src="{{gear.thumb}}">
-        <p>{{gear.chant}}</p>
-      </div>
-    </td>
-  </tr>
-</table>
+<div class="display">
+  <div *ngFor="let gear of gears" class="cadre" appPulse>
+    <img src="{{gear.thumb}}">
+    <p>{{gear.chant}}</p>
+  </div>
+</div>

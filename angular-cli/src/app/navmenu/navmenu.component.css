@@ -1,0 +1,19 @@
+#leftmenu {
+  background: linear-gradient(#333, #222);
+  width: 10%;
+  min-width: 80px;
+  position: fixed;
+  border-bottom: 5px solid var(--vibrant);
+  text-align: center;
+  padding-top: 5px;
+}
+
+#leftmenu .button {
+  min-width: 50px;
+  width: 75%;
+  margin: 5px;
+}
+
+#leftmenu ul {
+  margin-bottom: 5px;
+}

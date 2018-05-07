@@ -11,6 +11,7 @@ import { UnknownComponent } from './unknown/unknown.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { PulseDirective } from './pulse.directive';
 import { TogglePulseDirective } from './toggle-pulse.directive';
+import { UpbuttonComponent } from './upbutton/upbutton.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TogglePulseDirective } from './toggle-pulse.directive';
     UnknownComponent,
     NavmenuComponent,
     PulseDirective,
-    TogglePulseDirective
+    TogglePulseDirective,
+    UpbuttonComponent
   ],
   imports: [
     BrowserModule,

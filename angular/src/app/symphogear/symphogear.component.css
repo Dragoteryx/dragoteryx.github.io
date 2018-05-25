@@ -1,0 +1,15 @@
+.display {
+  text-align: center;
+}
+
+.cadre {
+  position: relative;
+  width: 32%;
+  min-width: 200px;
+}
+
+@media all and (max-width: 368px) {
+  .cadre {
+    min-width: 100%;
+  }
+}

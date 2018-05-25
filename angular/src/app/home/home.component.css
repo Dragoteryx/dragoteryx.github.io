@@ -1,0 +1,9 @@
+.botimg {
+  max-width: 50vw;
+}
+
+@media all and (max-width: 368px) {
+  .botimg {
+    min-width: 100%;
+  }
+}

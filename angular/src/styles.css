@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Segoe UI", "Arial";
+  color: #333;
+  --vibrant: olive;
+  --on: teal;
+  --off: maroon;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid #DDD;
+  padding: 5px;
+  padding-bottom: 25px;
+  margin: 5px;
+  width: 98%;
+}
+
+.following {
+  position: fixed !important;
+  top: 0 !important;
+}
+
+.dropdownhover .dropdowncontent,
+.dropdownclick .dropdowncontent {
+  display: none;
+}
+.dropdownhover:hover .dropdowncontent,
+.dropdownclick:active .dropdowncontent {
+  display: block;
+}
+
+ul.dropdowncontent {
+  list-style-type: none;
+  border-radius: 5px;
+  background: radial-gradient(#FFF, #FEFEFE);
+  border: 1px solid #EEE;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 5px;
+}
+
+
+
+.button {
+  color: #EEE !important;
+  padding: 5px;
+  background: radial-gradient(#333, #222);
+  border-bottom: 5px solid var(--vibrant);
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+  font-weight: normal !important;
+}
+
+.button:hover {
+  border-bottom: 5px solid var(--on);
+}
+
+a:link, a:visited {
+  color: var(--vibrant);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+.button.disabled {
+  border-bottom: 5px solid var(--off);
+}
+
+.round {
+  border-radius: 5px;
+}
+
+.cadre {
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid #CCC;
+  box-shadow: 2px 5px 10px #DDD;
+}
+
+.cadre img {
+  width: 100%;
+}
+
+.cadre p {
+  background: linear-gradient(#FFF, #EEE);
+  text-align: center;
+  padding: 5px;
+  font-size: 100%;
+  word-wrap: break-word;
+}
+
+hr {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border-bottom: 0 solid #0000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(#EEE, #FFF, #EEE);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#222, #333, #222);
+    border-bottom: 5px solid var(--vibrant);
+    border-top: 5px solid var(--vibrant);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-bottom: 5px solid var(--on);
+  border-top: 5px solid var(--on);
+}
+
+::-webkit-scrollbar-corner {
+  background: #EEE;
+}
+
+.debug {
+  border: 2px solid grey;
+  border-radius: 5px;
+  min-height: 25px;
+}
+
+.debug.red {
+  border: 2px solid red;
+}
+
+.debug.green {
+  border: 2px solid green;
+}
+
+.debug.blue {
+  border: 2px solid blue;
+}

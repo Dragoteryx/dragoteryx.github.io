@@ -1,0 +1,43 @@
+.banner {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.wrapper {
+  background: #EEE;
+}
+
+.content {
+  top: -5px;
+  z-index: 2;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+  padding: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-height: 60vh;
+  background: radial-gradient(#FFF, #F8F8F8);
+  border-top: 5px solid var(--vibrant);
+}
+
+footer {
+  top: -5px;
+  z-index: 2;
+  position: relative;
+  color: #EEE;
+  padding: 10px;
+  border-radius: 0 0 15px 15px;
+  height: 50px;
+  background: linear-gradient(#333, #222);
+  border-bottom: 5px solid var(--vibrant);
+}
+
+.content, footer {
+  box-shadow:
+  12px 6px 25px #0003,
+  -12px 6px 25px #0003;
+  margin-left: 35px;
+  margin-right: 35px;
+}

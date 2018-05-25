@@ -1,0 +1,7 @@
+<nav>
+  Hi!
+  <div class="buttons">
+    <span *ngFor="let website of websites"><a href="{{website.href}}" class="button round" appPulse>{{website.name}}</a></span>
+    <span *ngFor="let local of locals"><a routerLink="{{local.href}}" class="button round" appPulse>{{local.name}}</a></span>
+  </div>
+</nav>

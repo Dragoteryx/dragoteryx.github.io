@@ -8,6 +8,18 @@
   min-width: 200px;
 }
 
+@media all and (max-width: 1220px) {
+  .cadre {
+    width: 45%;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .cadre {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 368px) {
   .cadre {
     min-width: 100%;

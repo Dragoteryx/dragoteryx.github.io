@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SymphogearComponent implements OnInit {
   gears = [
-    {chant: "Balwisyall nescell Gungnir tron", thumb: "../assets/hibiki.jpg"},
-    {chant: "Imyuteus Ame no Habakiri tron", thumb: "../assets/tsubasa.jpg"},
-    {chant: "Killter Ichaival tron", thumb: "../assets/chris.jpg"},
-    {chant: "Seilien coffin Airgetlám tron", thumb: "../assets/maria.jpg"},
-    {chant: "Zeios Igalima raizen tron", thumb: "../assets/kirika.jpg"},
-    {chant: "Various Shul Shagana tron", thumb: "../assets/shirabe.jpg"},
+    {chant: "Balwisyall nescell Gungnir tron", thumb: "./assets/hibiki.jpg"},
+    {chant: "Imyuteus Ame no Habakiri tron", thumb: "./assets/tsubasa.jpg"},
+    {chant: "Killter Ichaival tron", thumb: "./assets/chris.jpg"},
+    {chant: "Seilien coffin Airgetlám tron", thumb: "./assets/maria.jpg"},
+    {chant: "Zeios Igalima raizen tron", thumb: "./assets/kirika.jpg"},
+    {chant: "Various Shul Shagana tron", thumb: "./assets/shirabe.jpg"},
   ]
   constructor() { }
 

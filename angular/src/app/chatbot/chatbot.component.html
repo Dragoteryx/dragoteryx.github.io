@@ -1,0 +1,23 @@
+<div [style.display]="preview ? 'none' : 'block'" class="chatbot-content">
+  <div class="chatbot-header">
+    <span>DraBOTeryx</span>
+    <div class="chatbot-icon">
+      <img src="./assets/drabot.png">
+    </div>
+  </div>
+  <div class="chatbot-messages">
+    <p *ngFor="let message of messages" class="chatbot-message" [style.border-left]="message.auto ? '5px solid olive' : '5px solid teal'">
+      {{message.content}}
+    </p>
+  </div>
+  <form class="chatbot-form" (submit)="sendMessage()">
+    <input type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+    <input appPulse type="submit" value="Send" class="button">
+  </form>
+</div>
+<div (click)="toggleChatbox()" [style.display]="preview ? 'block' : 'none'" class="chatbot-preview">
+  Click here for more
+</div>
+<div [style.border]="preview ? '2.5px solid olive' : '2.5px solid teal'"
+(click)="toggleChatbox()" appPulse class="chatbot-button">
+</div>

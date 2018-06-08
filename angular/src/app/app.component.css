@@ -6,7 +6,7 @@
 .banner img {
   margin-top: 50px;
   display: inline-block;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .wrapper {
@@ -15,7 +15,6 @@
 
 .content {
   top: -5px;
-  z-index: 2;
   position: relative;
   border-radius: 15px 15px 0 0;
   padding: 15px;

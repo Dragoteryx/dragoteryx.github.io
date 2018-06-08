@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +13,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FactsComponent } from './facts/facts.component';
 import { SymphogearComponent } from './symphogear/symphogear.component';
 import { FactsService } from './facts.service';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { FactsService } from './facts.service';
     PulseDirective,
     PulseToggleDirective,
     FactsComponent,
-    SymphogearComponent
+    SymphogearComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [FactsService],
   bootstrap: [AppComponent]

@@ -23,6 +23,7 @@
   min-height: 60vh;
   background: radial-gradient(#FFF, #F8F8F8);
   border-top: 5px solid var(--vibrant);
+  padding-bottom: 50px;
 }
 
 footer {

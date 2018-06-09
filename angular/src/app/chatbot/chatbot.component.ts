@@ -10,7 +10,7 @@ export class ChatbotComponent implements OnInit {
   text: string = "";
   messages = [
     {
-      content: "You want sum h4lp? I can help you if you want to know something about Drabot or the fact generator.",
+      content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
       auto: true
     }
   ]
@@ -24,7 +24,7 @@ export class ChatbotComponent implements OnInit {
       auto: true
     },
     else: {
-      content: "I don't understand, sorry.",
+      content: "Wakannai yo.",
       auto: true
     }
   }

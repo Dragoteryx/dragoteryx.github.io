@@ -1,25 +1,35 @@
-<div [style.display]="preview ? 'none' : 'block'" class="chatbot-content">
-  <div class="chatbot-header">
-    <span>Drabot</span>
-    <div class="chatbot-icon">
-      <img src="./assets/drabot.png">
+<div class="chatbot-wrapper">
+  <div class="chatbot-window"
+  [style.display]="preview ? 'none' : 'block'"
+  [style.width]="width"
+  [style.height]="height"
+  [ngStyle]="getStyle">
+    <div class="chatbot-header"
+    [style.height]="headerHeight"
+    [style.border-top-left-radius]="responsive ? '0' : '15px'"
+    (click)="toggleChatbox()">
+      <img src="./assets/drabot.png"><br>
+      <span>Drabot</span>
     </div>
+    <div class="chatbot-messages" [style.height]="messagesHeight">
+      <p *ngFor="let message of messages"
+      [innerHTML]="message.content | keepHtml"
+      class="chatbot-message"
+      [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
+      </p>
+    </div>
+    <form class="chatbot-form"
+    [style.height]="formHeight"
+    [style.border-bottom-left-radius]="responsive ? '0' : '15px'"
+    (submit)="sendMessage()">
+      <input type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+      <input appPulse type="submit" value="Send" class="button">
+    </form>
   </div>
-  <div class="chatbot-messages">
-    <p *ngFor="let message of messages"
-    [innerHTML]="message.content | keepHtml"
-    class="chatbot-message"
-    [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
-    </p>
-  </div>
-  <form class="chatbot-form" (submit)="sendMessage()">
-    <input type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
-    <input appPulse type="submit" value="Send" class="button">
-  </form>
-</div>
-<div (click)="toggleChatbox()" [style.display]="preview ? 'block' : 'none'" class="chatbot-preview">
-  Click here for help
-</div>
-<div [style.border]="preview ? '2.5px solid olive' : '2.5px solid teal'"
-(click)="toggleChatbox()" appPulse class="chatbot-button">
+  <a (click)="toggleChatbox()" [style.display]="preview ? 'block' : 'none'" class="chatbot-preview">
+    Click here for help
+  </a>
+  <a [style.border]="preview ? '2.5px solid olive' : '2.5px solid teal'"
+  [style.display]="preview || !responsive ? 'inline' : 'none'"
+  (click)="toggleChatbox()" appPulse class="chatbot-button"></a>
 </div>

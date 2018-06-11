@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
@@ -6,14 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent implements OnInit {
+  @Input() height: string;
+  @Input() width: string;
+  responsive: boolean = false;
   preview: boolean = true;
   text: string = "";
+  headerHeight: string = "35px";
+  formHeight: string = "35px";
+  windowWidth: string;
+  windowHeight: string;
   messages = [
     {
       content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
       keywords: [""]
     }
-  ]
+  ];
   responses = [
     {
       content: "WIP (drabot)",
@@ -32,6 +39,14 @@ export class ChatbotComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.responsive = window.innerWidth <= 500;
+    this.formHeight = window.innerWidth > 500 ? "35px" : "75px";
+    this.windowWidth = window.innerWidth + "px";
+    this.windowHeight = window.innerHeight + "px";
+    if (this.responsive) {
+      this.width = this.windowWidth;
+      this.height = this.windowHeight;
+    }
   }
 
   toggleChatbox() {
@@ -58,6 +73,30 @@ export class ChatbotComponent implements OnInit {
         }
       }
     }, 500);
+  }
+
+  get messagesHeight() {
+    let height = Number(this.height.replace("px", ""));
+    let headerHeight = Number(this.headerHeight.replace("px", ""));
+    let formHeight = Number(this.formHeight.replace("px", ""));
+    return height - headerHeight - formHeight + "px";
+  }
+
+  get getStyle() {
+    if (this.responsive)
+    return {
+      "max-width": "100%",
+      "bottom": "0",
+
+    }
+    else
+    return {
+      "max-width": "90%",
+      "bottom": "85px",
+      "border-top-left-radius": "15px",
+      "border-bottom-left-radius": "15px",
+      "box-shadow": "-5px 5px 10px #0003"
+    }
   }
 
 }

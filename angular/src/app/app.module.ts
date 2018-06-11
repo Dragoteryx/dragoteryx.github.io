@@ -14,6 +14,7 @@ import { FactsComponent } from './facts/facts.component';
 import { SymphogearComponent } from './symphogear/symphogear.component';
 import { FactsService } from './facts.service';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { KeepHtmlPipe } from './keep-html.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     PulseToggleDirective,
     FactsComponent,
     SymphogearComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    KeepHtmlPipe
   ],
   imports: [
     BrowserModule,

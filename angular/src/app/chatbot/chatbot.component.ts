@@ -11,23 +11,23 @@ export class ChatbotComponent implements OnInit {
   messages = [
     {
       content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
-      auto: true
+      keywords: [""]
     }
   ]
-  reponses = {
-    drabot: {
+  responses = [
+    {
       content: "WIP (drabot)",
-      auto: true
+      keywords: ["drabot"]
     },
-    facts: {
+    {
       content: "WIP (facts)",
-      auto: true
+      keywords: ["fact"]
     },
-    else: {
+    {
       content: "Wakannai yo.",
-      auto: true
+      keywords: [""]
     }
-  }
+  ]
 
   constructor() { }
 
@@ -38,28 +38,26 @@ export class ChatbotComponent implements OnInit {
     this.preview = !this.preview;
   }
 
-  sendMessage() {
-    if (this.text.length == 0) return;
+  sendMessage(content = null) {
+    if (content === null) {
+      if (this.text.length == 0)
+        return;
+      content = this.text;
+      this.text = "";
+    }
+    let text = content.toLowerCase();
     this.messages.push({
-      content: this.text,
-      auto: false
+      content: content,
+      keywords: []
     });
-    let text = this.text.toLowerCase();
-    this.text = "";
     setTimeout(() => {
-      let wakaru = false;
-      if (text.includes("drabot")) {
-        wakaru = true;
-        this.messages.push(this.reponses.drabot);
+      for (let response of this.responses) {
+        if (response.keywords.reduce((acc, keyword) => acc = acc ? text.includes(keyword) : acc, true)) {
+          this.messages.push(response);
+          return;
+        }
       }
-      if (text.includes("fact")) {
-        wakaru = true;
-        this.messages.push(this.reponses.facts);
-      }
-      if (!wakaru) {
-        this.messages.push(this.reponses.else);
-      }
-    }, 1000);
+    }, 500);
   }
 
 }

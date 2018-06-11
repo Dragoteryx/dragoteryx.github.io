@@ -6,8 +6,10 @@
     </div>
   </div>
   <div class="chatbot-messages">
-    <p *ngFor="let message of messages" class="chatbot-message" [style.border-left]="message.auto ? '5px solid olive' : '5px solid teal'">
-      {{message.content}}
+    <p *ngFor="let message of messages"
+    [innerHTML]="message.content | keepHtml"
+    class="chatbot-message"
+    [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
     </p>
   </div>
   <form class="chatbot-form" (submit)="sendMessage()">

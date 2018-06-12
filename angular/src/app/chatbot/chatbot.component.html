@@ -13,7 +13,7 @@
       <img src="./assets/drabot.png" [style.top]="responsive ? '0' : '-25px'"><br>
       <span>Drabot</span>
     </div>
-    <div class="chatbot-messages" [style.height]="messagesHeight">
+    <div class="chatbot-messages" [style.height]="messagesHeight" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <p *ngFor="let message of messages"
       [innerHTML]="message.content | keepHtml"
       class="chatbot-message"

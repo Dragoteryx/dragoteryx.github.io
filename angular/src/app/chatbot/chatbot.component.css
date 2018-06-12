@@ -1,18 +1,21 @@
 .chatbot-window {
-  /*box-shadow: -5px 5px 10px #0003;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;*/
+  position: fixed;
   right: 0;
   z-index: 100;
-  position: fixed;
 }
 
 .chatbot-header {
-  /*border-top-left-radius: 15px;*/
   background: linear-gradient(#222, #333);
   border-top: 5px solid var(--vibrant);
   color: #EEE;
   text-align: center;
+}
+
+.chatbot-header a {
+  border-radius: 5px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
 }
 
@@ -30,7 +33,6 @@
   width: 50px;
   display: inline-block;
   position: relative;
-  top: -25px;
 }
 
 .chatbot-messages {
@@ -48,7 +50,6 @@
 }
 
 .chatbot-form {
-  /*border-bottom-left-radius: 15px;*/
   background: linear-gradient(#333, #222);
   border-bottom: 5px solid var(--vibrant);
   text-align: center;

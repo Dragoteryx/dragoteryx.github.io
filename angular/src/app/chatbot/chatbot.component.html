@@ -6,9 +6,11 @@
   [ngStyle]="getStyle">
     <div class="chatbot-header"
     [style.height]="headerHeight"
-    [style.border-top-left-radius]="responsive ? '0' : '15px'"
-    (click)="toggleChatbox()">
-      <img src="./assets/drabot.png"><br>
+    [style.border-top-left-radius]="responsive ? '0' : '15px'">
+      <a appPulse class="button"
+      [style.display]="responsive ? 'inline-block' : 'none'"
+      (click)="toggleChatbox()">Close</a>
+      <img src="./assets/drabot.png" [style.top]="responsive ? '0' : '-25px'"><br>
       <span>Drabot</span>
     </div>
     <div class="chatbot-messages" [style.height]="messagesHeight">

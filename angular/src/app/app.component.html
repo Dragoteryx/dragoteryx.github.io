@@ -1,15 +1,15 @@
-<header>
+<header [style.display]="hide ? 'none' : 'block'">
   <app-navmenu></app-navmenu>
   <div class="banner">
     <a routerLink="/"><img src="./assets/banner.jpg"></a>
   </div>
 </header>
 <div class="wrapper">
-  <div class="content">
+  <div class="content" [style.display]="hide ? 'none' : 'block'">
     <router-outlet></router-outlet>
   </div>
-  <app-chatbot width="300px" height="400px"></app-chatbot>
-  <footer>
+  <app-chatbot width="300px" height="400px" (messageEvent)="receive($event)"></app-chatbot>
+  <footer [style.display]="hide ? 'none' : 'block'">
     &copy; DrG Company
   </footer>
 </div>

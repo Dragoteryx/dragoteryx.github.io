@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent implements OnInit {
+  @Output() messageEvent = new EventEmitter<string>();
   @Input() height: string;
   @Input() width: string;
   responsive: boolean = false;
@@ -41,6 +42,7 @@ export class ChatbotComponent implements OnInit {
   ngOnInit() {
     this.responsive = window.innerWidth <= 500;
     this.formHeight = window.innerWidth > 500 ? "35px" : "75px";
+    this.headerHeight = window.innerWidth > 500 ? "35px" : "55px";
     this.windowWidth = window.innerWidth + "px";
     this.windowHeight = window.innerHeight + "px";
     if (this.responsive) {
@@ -51,6 +53,8 @@ export class ChatbotComponent implements OnInit {
 
   toggleChatbox() {
     this.preview = !this.preview;
+    if (this.responsive)
+      this.messageEvent.emit("toggleHidden");
   }
 
   sendMessage(content = null) {
@@ -79,7 +83,9 @@ export class ChatbotComponent implements OnInit {
     let height = Number(this.height.replace("px", ""));
     let headerHeight = Number(this.headerHeight.replace("px", ""));
     let formHeight = Number(this.formHeight.replace("px", ""));
-    return height - headerHeight - formHeight + "px";
+    let mh = height - headerHeight - formHeight;
+    mh = this.responsive ? mh - 10 : mh;
+    return mh + "px";
   }
 
   get getStyle() {
@@ -95,7 +101,8 @@ export class ChatbotComponent implements OnInit {
       "bottom": "85px",
       "border-top-left-radius": "15px",
       "border-bottom-left-radius": "15px",
-      "box-shadow": "-5px 5px 10px #0003"
+      "box-shadow": "-5px 5px 10px #0003",
+      "position": "fixed"
     }
   }
 

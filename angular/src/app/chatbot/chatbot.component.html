@@ -1,4 +1,4 @@
-<div class="chatbot-wrapper">
+<div class="chatbot-wrapper" [style.background]="!preview && responsive ? 'radial-gradient(#333, #222)' : 'none'">
   <div class="chatbot-window"
   [style.display]="preview ? 'none' : 'block'"
   [style.width]="width"

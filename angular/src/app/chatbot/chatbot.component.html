@@ -24,7 +24,9 @@
     [style.height]="formHeight"
     [style.border-bottom-left-radius]="responsive ? '0' : '15px'"
     (submit)="sendMessage()">
-      <input type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+      <input type="text"
+      [style.height]="responsive ? '48px' : '16px'"
+      [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
       <input appPulse type="submit" value="Send" class="button">
     </form>
   </div>

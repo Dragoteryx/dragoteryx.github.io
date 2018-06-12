@@ -41,7 +41,7 @@ export class ChatbotComponent implements OnInit {
 
   ngOnInit() {
     this.responsive = window.innerWidth <= 500;
-    this.formHeight = window.innerWidth > 500 ? "35px" : "75px";
+    this.formHeight = window.innerWidth > 500 ? "35px" : "100px";
     this.headerHeight = window.innerWidth > 500 ? "35px" : "55px";
     this.windowWidth = window.innerWidth + "px";
     this.windowHeight = window.innerHeight + "px";

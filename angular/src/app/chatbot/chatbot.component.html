@@ -1,39 +1,41 @@
-<div class="chatbot-wrapper" [style.background]="!preview && responsive ? 'radial-gradient(#333, #222)' : 'none'">
-  <div class="chatbot-window"
+<div class="chatbot-wrapper">
+  <div #chatbotWindow class="chatbot-window"
   [style.display]="preview ? 'none' : 'block'"
-  [style.width]="width"
-  [style.height]="height"
-  [ngStyle]="getStyle">
-    <div class="chatbot-header"
-    [style.height]="headerHeight"
-    [style.border-top-left-radius]="responsive ? '0' : '15px'">
-      <a appPulse class="button"
-      [style.display]="responsive ? 'inline-block' : 'none'"
-      (click)="toggleChatbox()">Close</a>
-      <img src="./assets/drabot.png" [style.top]="responsive ? '0' : '-25px'"><br>
+  [ngStyle]="styles.window">
+    <div #chatbotHeader class="chatbot-header"
+    [ngStyle]="styles.header">
+      <img src="./assets/drabot.png"
+      [style.top]="state != 0 ? '0' : '-25px'"><br>
       <span>Drabot</span>
+      <a appPulse class="button"
+      [style.display]="state != 0 ? 'inline' : 'none'"
+      (click)="toggleChatbox()">Close</a>
     </div>
-    <div class="chatbot-messages" [style.height]="messagesHeight" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div class="chatbot-messages"
+    [ngStyle]="styles.messages"
+    #list [scrollTop]="list.scrollHeight">
       <p *ngFor="let message of messages"
-      [innerHTML]="message.content | keepHtml"
       class="chatbot-message"
+      [innerHTML]="message.content | keepHtml"
       [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
       </p>
     </div>
-    <form class="chatbot-form"
-    [style.height]="formHeight"
-    [style.border-bottom-left-radius]="responsive ? '0' : '15px'"
+    <form #chatbotForm class="chatbot-form"
+    [ngStyle]="styles.form"
     (submit)="sendMessage()">
-      <input type="text"
-      [style.height]="responsive ? '48px' : '16px'"
+      <input type="text" [ngStyle]="styles.text"
       [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
-      <input appPulse type="submit" value="Send" class="button">
+      <input appPulse type="submit" value="Send" class="button"
+      [ngStyle]="styles.submit">
     </form>
   </div>
-  <a (click)="toggleChatbox()" [style.display]="preview ? 'block' : 'none'" class="chatbot-preview">
+  <a class="chatbot-preview"
+  [style.display]="preview ? 'block' : 'none'"
+  (click)="toggleChatbox()">
     Click here for help
   </a>
-  <a [style.border]="preview ? '2.5px solid olive' : '2.5px solid teal'"
-  [style.display]="preview || !responsive ? 'inline' : 'none'"
-  (click)="toggleChatbox()" appPulse class="chatbot-button"></a>
+  <a appPulse class="chatbot-button"
+  [style.display]="preview || state == 0 ? 'block' : 'none'"
+  [style.border]="preview ? '2.5px solid olive' : '2.5px solid teal'"
+  (click)="toggleChatbox()"></a>
 </div>

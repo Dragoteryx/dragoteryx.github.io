@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
@@ -6,16 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent implements OnInit {
-  @Output() messageEvent = new EventEmitter<string>();
-  @Input() height: string;
-  @Input() width: string;
-  responsive: boolean = false;
-  preview: boolean = true;
-  text: string = "";
-  headerHeight: string = "35px";
-  formHeight: string = "35px";
-  windowWidth: string;
-  windowHeight: string;
+
   messages = [
     {
       content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
@@ -35,26 +26,139 @@ export class ChatbotComponent implements OnInit {
       content: "Wakannai yo.",
       keywords: [""]
     }
-  ]
+  ];
+  @Output() messageEvent = new EventEmitter<string>();
+  preview: boolean = true;
+  text: string = "";
+  oldScroll: number = 0;
+  hidden: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    this.responsive = window.innerWidth <= 500;
-    this.formHeight = window.innerWidth > 500 ? "35px" : "100px";
-    this.headerHeight = window.innerWidth > 500 ? "35px" : "55px";
-    this.windowWidth = window.innerWidth + "px";
-    this.windowHeight = window.innerHeight + "px";
-    if (this.responsive) {
-      this.width = this.windowWidth;
-      this.height = this.windowHeight;
+  }
+
+  ngAfterViewInit() {
+  }
+
+  @HostListener("window:resize") resize() {
+    if (!this.preview) {
+      if ((this.state != 0 && !this.hidden) ||
+      (this.state == 0 && this.hidden))
+        this.toggleHiddenBackground();
+    }
+  }
+
+  get state() {
+    if (window.innerWidth > 500 && window.innerHeight > 600)
+      return 0;
+    else if (window.innerWidth <= 500 && window.innerHeight > 600)
+      return 1;
+    else if (window.innerWidth > 500 && window.innerHeight <= 600)
+      return 2;
+    else if (window.innerWidth <= window.innerHeight)
+      return 1;
+    else return 2;
+  }
+
+  get styles() {
+    if (this.state == 0) { // desktop
+      return {
+        window: {
+          height: "400px",
+          width: "300px",
+          position: "fixed",
+          bottom: "85px",
+          right: 0,
+          "border-top-left-radius": "15px",
+          "border-bottom-left-radius": "15px"
+        },
+        header: {
+          height: "35px",
+          "border-top-left-radius": "15px"
+        },
+        messages: {
+          height: "325px",
+          "overflow-y": "scroll"
+        },
+        form: {
+          height: "40px",
+          "border-bottom-left-radius": "15px"
+        },
+        text: {
+          width: "70%"
+        },
+        submit: {}
+      }
+    } else { // mobile
+      return this.state == 1 ? { // portrait
+       window: {
+         height: "100%",
+         width: "100%",
+       },
+       header: {
+         position: "fixed",
+         top: 0,
+         height: "60px"
+       },
+       messages: {
+         "min-height": (window.innerHeight - 160) + "px",
+         "margin-top": "60px",
+         "margin-bottom": "98px"
+       },
+       form: {
+         position: "fixed",
+         bottom: 0,
+         height: "98px"
+       },
+       text: {
+         height: "48px",
+         "margin-top": "5px",
+         width: "90%"
+       },
+       submit: {
+         width: "90%"
+       }
+     } : { // paysage
+       window: {
+         height: "100%",
+         width: "100%",
+       },
+       header: {
+         position: "fixed",
+         top: 0,
+         height: "60px"
+       },
+       messages: {
+         "min-height": (window.innerHeight - 102) + "px",
+         "margin-top": "60px",
+         "margin-bottom": "40px"
+       },
+       form: {
+         position: "fixed",
+         bottom: 0,
+         height: "40px"
+       },
+       text: {
+         width: "90%"
+       },
+       submit: {}
+     }
     }
   }
 
   toggleChatbox() {
+    if (this.preview)
+      this.oldScroll = window.scrollY;
+    else window.scroll(0, this.oldScroll);
     this.preview = !this.preview;
-    if (this.responsive)
-      this.messageEvent.emit("toggleHidden");
+    if (this.state != 0)
+      this.toggleHiddenBackground();
+  }
+
+  toggleHiddenBackground() {
+    this.messageEvent.emit();
+    this.hidden = !this.hidden;
   }
 
   sendMessage(content = null) {
@@ -77,33 +181,6 @@ export class ChatbotComponent implements OnInit {
         }
       }
     }, 500);
-  }
-
-  get messagesHeight() {
-    let height = Number(this.height.replace("px", ""));
-    let headerHeight = Number(this.headerHeight.replace("px", ""));
-    let formHeight = Number(this.formHeight.replace("px", ""));
-    let mh = height - headerHeight - formHeight;
-    mh = this.responsive ? mh - 10 : mh;
-    return mh + "px";
-  }
-
-  get getStyle() {
-    if (this.responsive)
-    return {
-      "max-width": "100%",
-      "bottom": "0",
-
-    }
-    else
-    return {
-      "max-width": "90%",
-      "bottom": "85px",
-      "border-top-left-radius": "15px",
-      "border-bottom-left-radius": "15px",
-      "box-shadow": "-5px 5px 10px #0003",
-      "position": "fixed"
-    }
   }
 
 }

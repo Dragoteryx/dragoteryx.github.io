@@ -8,7 +8,7 @@
   <div class="content" [style.display]="hidden ? 'none' : 'block'">
     <router-outlet></router-outlet>
   </div>
-  <app-chatbot width="300px" height="400px" (messageEvent)="hidden = !hidden"></app-chatbot>
+  <app-chatbot (messageEvent)="hidden = !hidden"></app-chatbot>
   <footer [style.display]="hidden ? 'none' : 'block'">
     &copy; DrG Company
   </footer>

@@ -16,6 +16,7 @@
     #list [scrollTop]="list.scrollHeight">
       <p *ngFor="let message of messages"
       class="chatbot-message"
+      [id]="message.id"
       [innerHTML]="message.content | keepHtml"
       [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
       </p>

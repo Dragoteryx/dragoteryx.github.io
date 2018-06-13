@@ -10,7 +10,8 @@ export class ChatbotComponent implements OnInit {
   messages = [
     {
       content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
-      keywords: [""]
+      keywords: [""],
+      id: "msg-0"
     }
   ];
   responses = [
@@ -32,6 +33,7 @@ export class ChatbotComponent implements OnInit {
   text: string = "";
   oldScroll: number = 0;
   hidden: boolean = false;
+  last: number = 0;
 
   constructor() { }
 
@@ -161,6 +163,22 @@ export class ChatbotComponent implements OnInit {
     this.hidden = !this.hidden;
   }
 
+  get lastID() {
+    return "msg-" + this.last;
+  }
+
+  addMessage(message) {
+    message = Object.assign({}, message);
+    this.last++;
+    message.id = "msg-" + this.last;
+    this.messages.push(message);
+    if (this.state != 0) {
+      setTimeout(() => {
+        document.getElementById(this.lastID).scrollIntoView();
+      }, 1);
+    }
+  }
+
   sendMessage(content = null) {
     if (content === null) {
       if (this.text.length == 0)
@@ -169,14 +187,14 @@ export class ChatbotComponent implements OnInit {
       this.text = "";
     }
     let text = content.toLowerCase();
-    this.messages.push({
+    this.addMessage({
       content: content,
       keywords: []
     });
     setTimeout(() => {
       for (let response of this.responses) {
         if (response.keywords.reduce((acc, keyword) => acc = acc ? text.includes(keyword) : acc, true)) {
-          this.messages.push(response);
+          this.addMessage(response);
           return;
         }
       }

@@ -8,28 +8,28 @@
   z-index: 11;
   background: linear-gradient(#333, #222);
   border-top: 5px solid var(--vibrant);
-  text-align: center;
 }
 
 .chatbot-header span {
-  color: #EEE;
   position: relative;
-  right: 35%;
-  top: -45px;
+  color: #EEE;
+  bottom: 47.5px;
+  left: 10px;
 }
 
 .chatbot-header img {
   position: relative;
   border-radius: 50%;
   border: 1px solid #EEE;
+  left: 40%;
 }
 
 .chatbot-header a {
   position: relative;
-  right: -25%;
-  top: -35px;
   border-radius: 5px;
   cursor: pointer;
+  left: 70%;
+  bottom: 37.5px;
 }
 
 .chatbot-messages {

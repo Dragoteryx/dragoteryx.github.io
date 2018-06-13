@@ -140,7 +140,7 @@ export class ChatbotComponent implements OnInit {
          height: "40px"
        },
        text: {
-         width: "90%"
+         width: "80%"
        },
        submit: {}
      }

@@ -14,12 +14,15 @@
     <div class="chatbot-messages"
     [ngStyle]="styles.messages"
     #list [scrollTop]="list.scrollHeight">
-      <p *ngFor="let message of messages"
-      class="chatbot-message"
-      [id]="message.id"
-      [innerHTML]="message.content | keepHtml"
-      [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'">
-      </p>
+      <div *ngFor="let message of messages" [id]="message.id">
+        <p class="chatbot-message"
+        [innerHTML]="message.keywords.length ? sanitizer.bypassSecurityTrustHtml(message.content) : message.content"
+        [style.border-left]="message.keywords.length ? '5px solid olive' : '5px solid teal'"
+        [style.text-align]="message.keywords.length ? 'left' : 'right'"></p>
+        <p *ngFor="let then of message.then"
+        appPulse class="chatbot-msg-then"
+        (click)="sendMessage(then)">{{then}}</p>
+      </div>
     </div>
     <form #chatbotForm class="chatbot-form"
     [ngStyle]="styles.form"

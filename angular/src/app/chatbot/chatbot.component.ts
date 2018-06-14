@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-chatbot',
@@ -9,23 +10,66 @@ export class ChatbotComponent implements OnInit {
 
   messages = [
     {
-      content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the fact generator.",
+      content: "You want sum h4lp? And you like MEMES? I can help you if you want to know something about Drabot (me) or the Fact Generator.",
       keywords: [""],
-      id: "msg-0"
+      id: "msg-0",
+      then: [
+        "Drabot",
+        "The Facts Generator"
+      ]
     }
   ];
   responses = [
     {
-      content: "WIP (drabot)",
-      keywords: ["drabot"]
+      content: "The <strike>best</strike> good Discord Bot !",
+      keywords: ["drabot"],
+      then: []
     },
     {
-      content: "WIP (facts)",
-      keywords: ["fact"]
+      content: `Make GET requests to
+      <a target='_blank' href='https://factgenerator.herokuapp.com/generate'>https://factgenerator.herokuapp.com/generate</a>.<br>
+      <br>
+      Alternatively you can use
+      <a target='_blank' href='https://factgenerator.herokuapp.com/bulk/1000'>https://factgenerator.herokuapp.com/bulk/[number]</a>
+      to generate more facts at the same time.<br>
+      <br>
+      Finally, you can use
+      <a target='_blank' href='https://factgenerator.herokuapp.com/generate/stalin_hitler'>https://factgenerator.herokuapp.com/generate/[query]</a>
+      to fetch a fact including specific words. (words must be separated by _)`,
+      keywords: ["use", "fact"],
+      then: []
+    },
+    {
+      content: `Why don't you just take a look at it yourself ?
+       <a target='_blank' href='https://factgenerator.herokuapp.com/database'>(not that big)</a>`,
+      keywords: ["fact", "database"],
+      then: []
+    },
+    {
+      content: `It's quite simple honestly. There is a database of words and sentences.
+      One sentence is chosen randomly then the gaps are filled until the sentence is complete.`,
+      keywords: ["how", "fact"],
+      then: [
+        "How big is the Fact Generator database ?"
+      ]
+    },
+    {
+      content: `The Facts Generator was initially created to have my Discord bot say random stupid things.
+      At some point I also implemented a Twitter Bot that did a similar thing.<br>
+      <br>
+      So I decided to separate it from my Discord bot and make it standalone.
+      It is now available <a target='_blank' href='https://factgenerator.herokuapp.com'>here</a>.`,
+      keywords: ["fact"],
+      then: [
+        "How does the Fact Generator work ?",
+        "How big is the Fact Generator database ?",
+        "How can I use the Fact Generator ?"
+      ]
     },
     {
       content: "Wakannai yo.",
-      keywords: [""]
+      keywords: [""],
+      then: []
     }
   ];
   @Output() messageEvent = new EventEmitter<string>();
@@ -35,7 +79,7 @@ export class ChatbotComponent implements OnInit {
   hidden: boolean = false;
   last: number = 0;
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
@@ -150,9 +194,6 @@ export class ChatbotComponent implements OnInit {
   }
 
   toggleChatbox() {
-    if (this.preview)
-      this.oldScroll = window.scrollY;
-    else window.scroll(0, this.oldScroll);
     this.preview = !this.preview;
     if (this.state != 0)
       this.toggleHiddenBackground();
@@ -189,7 +230,8 @@ export class ChatbotComponent implements OnInit {
     let text = content.toLowerCase();
     this.addMessage({
       content: content,
-      keywords: []
+      keywords: [],
+      then: []
     });
     setTimeout(() => {
       for (let response of this.responses) {

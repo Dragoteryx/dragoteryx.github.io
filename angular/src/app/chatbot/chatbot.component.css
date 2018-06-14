@@ -45,6 +45,17 @@
   padding: 5px;
   border: 1px solid #EAEAEA;
   border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.chatbot-msg-then {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--vibrant) !important;
+  word-wrap: break-word;
 }
 
 .chatbot-form {
@@ -103,22 +114,3 @@
   box-shadow: -5px 5px 10px #0003;
   text-decoration: none !important;
 }
-
-/* RESPONSIVE */
-/*@media all and (max-width: 500px) {
-
-  .chatbot-form {
-    height: 98px;
-  }
-
-  .chatbot-form input {
-    width: 90% !important;
-  }
-
-  .chatbot-form input[type="text"] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: 48px;
-  }
-
-}*/

@@ -1,14 +1,14 @@
-<header [style.display]="hidden ? 'none' : 'block'">
+<header>
   <app-navmenu></app-navmenu>
   <div class="banner">
     <a routerLink="/"><img src="./assets/banner.jpg"></a>
   </div>
 </header>
 <div class="wrapper">
-  <div class="content" [style.display]="hidden ? 'none' : 'block'">
+  <div class="content">
     <router-outlet></router-outlet>
   </div>
-  <footer [style.display]="hidden ? 'none' : 'block'">
+  <footer>
     &copy; DrG Company
   </footer>
 </div>

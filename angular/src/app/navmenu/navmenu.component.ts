@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavmenuComponent implements OnInit {
   websites = [
     {name: "Twitter", href: "https://twitter.com/Dragoteryx"},
+    {name: "Steam", href: "https://steamcommunity.com/id/dragoteryx/"},
     {name: "Github", href: "https://github.com/Dragoteryx"}
   ];
   locals = [];

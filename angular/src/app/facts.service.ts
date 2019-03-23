@@ -9,7 +9,7 @@ export class FactsService {
   fetchFact() {
     return new Promise((resolve, reject) => {
       this.http.get("https://factgenerator.herokuapp.com/generate").subscribe(res => {
-        resolve(res.json().fact);
+        resolve(res.json().text);
       }, err => reject);
     });
   }

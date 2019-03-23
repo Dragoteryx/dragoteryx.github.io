@@ -12,8 +12,7 @@ export class SymphogearComponent implements OnInit {
     {chant: "Killter Ichaival tron", thumb: "./assets/chris.jpg"},
     {chant: "Seilien coffin Airgetlám tron", thumb: "./assets/maria.jpg"},
     {chant: "Zeios Igalima raizen tron", thumb: "./assets/kirika.jpg"},
-    {chant: "Various Shul Shagana tron", thumb: "./assets/shirabe.jpg"},
-    {chant: "Vehell Tenno Vaubänn tron", thumb: "https://vltcorp.github.io/listimg/Warframe0006.jpg"}
+    {chant: "Various Shul Shagana tron", thumb: "./assets/shirabe.jpg"}
   ]
   constructor() { }
 

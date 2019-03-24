@@ -21,7 +21,7 @@ img {
   padding: 5px;
   padding-bottom: 25px;
   margin: 5px;
-  width: 98%;
+  width: 100%;
 }
 
 .following {
@@ -103,6 +103,41 @@ a.disabled {
   padding: 5px;
   font-size: 100%;
   word-wrap: break-word;
+  color: #333;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a.cadre {
+  text-decoration: none;
+}
+
+.display {
+  text-align: center;
+}
+
+.cadre {
+  position: relative;
+  width: 32%;
+  min-width: 200px;
+}
+
+@media all and (max-width: 1220px) {
+  .cadre {
+    width: 45%;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .cadre {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 368px) {
+  .cadre {
+    min-width: 100%;
+  }
 }
 
 hr {

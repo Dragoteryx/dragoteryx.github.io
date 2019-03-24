@@ -1,7 +1,7 @@
-<span>Symphogear is the best.</span>
+<span>Symphogear is awesome. But I mean, seriously, go <a href="https://www.crunchyroll.com/symphogear">watch it</a>.</span>
 <div class="display">
-  <div *ngFor="let gear of gears" class="cadre" appPulse>
+  <a *ngFor="let gear of gears" class="cadre" href="{{gear.link}}" appPulse>
     <img src="{{gear.thumb}}">
     <p>{{gear.chant}}</p>
-  </div>
+  </a>
 </div>

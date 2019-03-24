@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChatbotComponent } from './chatbot.component';
+import { GmodaddonsComponent } from './gmodaddons.component';
 
-describe('ChatbotComponent', () => {
-  let component: ChatbotComponent;
-  let fixture: ComponentFixture<ChatbotComponent>;
+describe('GmodaddonsComponent', () => {
+  let component: GmodaddonsComponent;
+  let fixture: ComponentFixture<GmodaddonsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatbotComponent ]
+      declarations: [ GmodaddonsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChatbotComponent);
+    fixture = TestBed.createComponent(GmodaddonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

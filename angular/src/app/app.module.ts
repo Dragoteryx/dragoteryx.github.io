@@ -13,7 +13,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FactsComponent } from './facts/facts.component';
 import { SymphogearComponent } from './symphogear/symphogear.component';
 import { FactsService } from './facts.service';
-import { ChatbotComponent } from './chatbot/chatbot.component';
+import { GmodaddonsComponent } from './gmodaddons/gmodaddons.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     PulseToggleDirective,
     FactsComponent,
     SymphogearComponent,
-    ChatbotComponent
+    GmodaddonsComponent
   ],
   imports: [
     BrowserModule,

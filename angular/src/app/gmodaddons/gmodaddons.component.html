@@ -1,0 +1,7 @@
+<span>I also made a few addons for Garry's Mod, in case you're interested.</span>
+<div class="display">
+  <a *ngFor="let addon of addons" class="cadre" href="{{addon.link}}" appPulse>
+    <img src="{{addon.thumb}}">
+    <p>{{addon.title}}</p>
+  </a>
+</div>
